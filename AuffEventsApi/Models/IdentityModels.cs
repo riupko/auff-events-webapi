@@ -29,5 +29,11 @@ namespace AuffEventsApi.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<AuffEventsApi.Models.Event> Events { get; set; }
+
+        public System.Data.Entity.DbSet<AuffEventsApi.Models.Team> Teams { get; set; }
+
+        public System.Data.Entity.DbSet<AuffEventsApi.Models.EntryForm> EntryForms { get; set; }
     }
 }
