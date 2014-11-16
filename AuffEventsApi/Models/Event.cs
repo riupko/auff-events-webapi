@@ -20,5 +20,6 @@ namespace AuffEventsApi.Models
         public int ParentEventID { get; set; }
         public int PosterID { get; set; }
         public bool IsPublished { get; set; }
+        public List<EntryForm> EntryForms { get; set; }
     }
 }

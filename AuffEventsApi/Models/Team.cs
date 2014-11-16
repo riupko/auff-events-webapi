@@ -18,5 +18,6 @@ namespace AuffEventsApi.Models
         public int ManagerID { get; set; }
         public int LogoID { get; set; }
         public bool IsArchived { get; set; }
+        public List<EntryForm> EntryForms { get; set; }
     }
 }

@@ -13,6 +13,9 @@ using AuffEventsApi.Models;
 
 namespace AuffEventsApi.Controllers
 {
+    /// <summary>
+    /// Working with events
+    /// </summary>
     public class EventsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -21,12 +24,18 @@ namespace AuffEventsApi.Controllers
         /// <summary>
         /// Get all events
         /// </summary>
+        /// <returns>List of events</returns>
         public IQueryable<Event> GetEvents()
         {
             return db.Events;
         }
-
+        
         // GET: api/Events/5
+        /// <summary>
+        /// Get event by id
+        /// </summary>
+        /// <param name="id">event id</param>
+        /// <returns>event object</returns>
         [ResponseType(typeof(Event))]
         public async Task<IHttpActionResult> GetEvent(int id)
         {
@@ -40,6 +49,12 @@ namespace AuffEventsApi.Controllers
         }
 
         // PUT: api/Events/5
+        /// <summary>
+        /// Update an event
+        /// </summary>
+        /// <param name="id">event id</param>
+        /// <param name="event">event object</param>
+        /// <returns></returns>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutEvent(int id, Event @event)
         {
@@ -75,6 +90,11 @@ namespace AuffEventsApi.Controllers
         }
 
         // POST: api/Events
+        /// <summary>
+        /// Create a new event
+        /// </summary>
+        /// <param name="event"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Event))]
         public async Task<IHttpActionResult> PostEvent(Event @event)
         {
@@ -90,6 +110,11 @@ namespace AuffEventsApi.Controllers
         }
 
         // DELETE: api/Events/5
+        /// <summary>
+        /// Delete event
+        /// </summary>
+        /// <param name="id">event id</param>
+        /// <returns></returns>
         [ResponseType(typeof(Event))]
         public async Task<IHttpActionResult> DeleteEvent(int id)
         {

@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201410132059266_Event-EntryForm-Team-FKs.Designer.cs">
       <DependentUpon>201410132059266_Event-EntryForm-Team-FKs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410132112305_Event-EntryForm-Team-FKs-2.cs" />
+    <Compile Include="Migrations\201410132112305_Event-EntryForm-Team-FKs-2.Designer.cs">
+      <DependentUpon>201410132112305_Event-EntryForm-Team-FKs-2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -305,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201410132059266_Event-EntryForm-Team-FKs.resx">
       <DependentUpon>201410132059266_Event-EntryForm-Team-FKs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410132112305_Event-EntryForm-Team-FKs-2.resx">
+      <DependentUpon>201410132112305_Event-EntryForm-Team-FKs-2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

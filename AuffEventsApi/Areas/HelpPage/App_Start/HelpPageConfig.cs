@@ -59,6 +59,8 @@ namespace AuffEventsApi.Areas.HelpPage
                 new TextSample("Binary JSON content. See http://bsonspec.org for details."),
                 new MediaTypeHeaderValue("application/bson"));
 
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
+            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
             //// Uncomment the following to use "[0]=foo&[1]=bar" directly as the sample for all actions that support form URL encoded format
             //// and have IEnumerable<string> as the body parameter or return type.
             //config.SetSampleForType("[0]=foo&[1]=bar", new MediaTypeHeaderValue("application/x-www-form-urlencoded"), typeof(IEnumerable<string>));
