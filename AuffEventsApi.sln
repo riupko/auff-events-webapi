@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuffEventsApi", "AuffEvents
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuffEventsApi.Tests", "AuffEventsApi.Tests\AuffEventsApi.Tests.csproj", "{6814991D-70A1-4A85-91DD-B384E281EF8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuffEventsMobileService", "AuffEventsMobileService\AuffEventsMobileService.csproj", "{8A4A404D-F38A-410C-A9CB-A6DE180DED6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6814991D-70A1-4A85-91DD-B384E281EF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6814991D-70A1-4A85-91DD-B384E281EF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6814991D-70A1-4A85-91DD-B384E281EF8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A4A404D-F38A-410C-A9CB-A6DE180DED6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A4A404D-F38A-410C-A9CB-A6DE180DED6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A4A404D-F38A-410C-A9CB-A6DE180DED6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A4A404D-F38A-410C-A9CB-A6DE180DED6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
