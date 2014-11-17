@@ -189,6 +189,7 @@
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\TeamMemberController.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="DataObjects\Location.cs" />
     <Compile Include="DataObjects\Image.cs" />
     <Compile Include="DataObjects\EntryFormMember.cs" />

@@ -80,6 +80,13 @@ $(function() {
         if (isLoggedIn) {
             $("#login-name").text(client.currentUser.userId);
             refreshTodoItems();
+            client.invokeApi("userInfo", {
+                body: null,
+                method: "get",
+            }).done(function (results) {
+                //console.log(results);
+                $("#login-name").text(results.result.facebook.email);
+            });
         }
     }
 
