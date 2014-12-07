@@ -53,6 +53,10 @@ namespace AuffEventsMobileService.Models
         public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.Location> Locations { get; set; }
 
         public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.Image> Images { get; set; }
+
+        public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.Member> Members { get; set; }
+
+        public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.TeamRole> TeamRoles { get; set; }
     }
 
 }

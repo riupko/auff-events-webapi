@@ -186,15 +186,19 @@
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\TeamMemberController.cs" />
+    <Compile Include="Controllers\TeamRoleController.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="DataObjects\TeamRole.cs" />
     <Compile Include="DataObjects\Location.cs" />
     <Compile Include="DataObjects\Image.cs" />
     <Compile Include="DataObjects\EntryFormMember.cs" />
     <Compile Include="DataObjects\EntryForm.cs" />
     <Compile Include="DataObjects\Event.cs" />
+    <Compile Include="DataObjects\Member.cs" />
     <Compile Include="DataObjects\TeamMember.cs" />
     <Compile Include="DataObjects\Team.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
@@ -205,6 +209,14 @@
     <Compile Include="Migrations\201411162123435_Required.cs" />
     <Compile Include="Migrations\201411162123435_Required.Designer.cs">
       <DependentUpon>201411162123435_Required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412071241430_Member.cs" />
+    <Compile Include="Migrations\201412071241430_Member.Designer.cs">
+      <DependentUpon>201412071241430_Member.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412071305044_TeamMember_Required.cs" />
+    <Compile Include="Migrations\201412071305044_TeamMember_Required.Designer.cs">
+      <DependentUpon>201412071305044_TeamMember_Required.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
@@ -242,6 +254,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201411162123435_Required.resx">
       <DependentUpon>201411162123435_Required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412071241430_Member.resx">
+      <DependentUpon>201412071241430_Member.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412071305044_TeamMember_Required.resx">
+      <DependentUpon>201412071305044_TeamMember_Required.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

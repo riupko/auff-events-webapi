@@ -1,4 +1,4 @@
-namespace AuffEventsMobileService.Migrations
+Ôªønamespace AuffEventsMobileService.Migrations
 {
     using AuffEventsMobileService.DataObjects;
     using System;
@@ -6,12 +6,13 @@ namespace AuffEventsMobileService.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using DtoMember = AuffEventsMobileService.DataObjects.Member;
 
     internal sealed class Configuration : DbMigrationsConfiguration<AuffEventsMobileService.Models.MobileServiceContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(AuffEventsMobileService.Models.MobileServiceContext context)
@@ -28,6 +29,75 @@ namespace AuffEventsMobileService.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            if (context.Members.Count() == 0)
+            {
+                List<DtoMember> members = new List<DtoMember>
+                {
+                    new DtoMember { Id = "1", FirstName = "FirstName1", LastName = "LastName1", Patronymic = "Patronimic1", DateBirth = new DateTime(1987, 1, 1), Height = 187, Grip = 1 },
+                    new DtoMember { Id = "2", FirstName = "FirstName2", LastName = "LastName2", Patronymic = "Patronimic2", DateBirth = new DateTime(1988, 1, 1), Height = 177, Grip = 2 },
+                };
+
+                foreach (DtoMember @member in members)
+                {
+                    context.Set<DtoMember>().Add(@member);
+                }
+
+                var teamMembers = context.TeamMembers.Where(m => m.MemberId == null);
+                foreach (var tm in  teamMembers)
+                {
+                    tm.MemberId = "1";
+                }
+            }
+
+            if (context.TeamRoles.Count() == 0)
+            {
+                List<TeamRole> teamRoles = new List<TeamRole>
+                {
+                    new TeamRole{ Id = "1", Name = "Coach" },
+                    new TeamRole{ Id = "2", Name = "Goalkeeper" },
+                    new TeamRole{ Id = "3", Name = "Defender" },
+                    new TeamRole{ Id = "4", Name = "Forward" },
+                };
+
+                foreach (TeamRole @teamRole in teamRoles)
+                {
+                    context.Set<TeamRole>().Add(@teamRole);
+                }
+
+                var teamMembers = context.TeamMembers.Where(m => m.TeamRoleId == null);
+                foreach (var tm in teamMembers)
+                {
+                    tm.TeamRoleId = "4";
+                }
+            }
+
+            if (context.TeamMembers.Count() == 0)
+            {
+                List<TeamMember> teamMembers = new List<TeamMember>
+                {
+                      new TeamMember {
+                                                    Id = "1",
+                                                    Number = 2,
+                                                    TeamId = "1",
+                                                    TeamRoleId = "3",
+                                                    MemberId = "1"
+                                                },
+                                                 new TeamMember {
+                                                    Id = "2",
+                                                    Number = 2,
+                                                    TeamId = "1",
+                                                    TeamRoleId = "4",
+                                                    MemberId = "2"
+                                                }
+
+                };
+
+                foreach (TeamMember @teamMember in teamMembers)
+                {
+                    context.Set<TeamMember>().Add(@teamMember);
+                }
+            }
 
             SeedThis(context);
         }
@@ -51,28 +121,24 @@ namespace AuffEventsMobileService.Migrations
             List<Team> teams = new List<Team>
             {
                 new Team { Id = "1", Name = "KFC", Description = "Kyiv Floorball Club", DateBirth= new DateTime(2007, 1, 1) },
-                new Team { Id = "2", Name = "—Í‡Î‡", Description = "—Í‡Î‡ ·Î‡ ·Î‡ ·Î‡", DateBirth= new DateTime(2004, 1, 1) }
+                 new Team { Id = "2", Name = "–°–∫–∞–ª–∞", Description = "–°–∫–∞–ª–∞ –±–ª–∞ –±–ª–∞ –±–ª–∞", DateBirth= new DateTime(2004, 1, 1) }
             };
 
             List<TeamMember> teamMembers = new List<TeamMember>
             {
                   new TeamMember {
                                                 Id = "1",
-                                                FirstName = "PlayerFirstName",
-                                                LastName = "PlayerLastName",
-                                                Patronymic= "PlayerPatronimic",
-                                                DateBirth = new DateTime(1988,1,1),
                                                 Number = 2,
-                                                TeamId = "1"
+                                                TeamId = "1",
+                                                TeamRoleId = "3",
+                                                MemberId = "1"
                                             },
                                              new TeamMember {
                                                 Id = "2",
-                                                FirstName = "PlayerFirstName",
-                                                LastName = "PlayerLastName",
-                                                Patronymic= "PlayerPatronimic",
-                                                DateBirth = new DateTime(1987,1,1),
                                                 Number = 2,
-                                                TeamId = "2"
+                                                TeamId = "1",
+                                                TeamRoleId = "4",
+                                                MemberId = "2"
                                             }
 
             };
@@ -82,7 +148,7 @@ namespace AuffEventsMobileService.Migrations
                 new Event 
                 { 
                     Id = "1", 
-                    Name = "◊ÂÏÔËÓÌ‡Ú ”Í‡ËÌ˚ 1 ÚÛ", 
+                    Name = "–ß–µ–º–ø–∏–æ–Ω–∞—Ç –£–∫—Ä–∞–∏–Ω—ã 1 —Ç—É—Ä", 
                     Description = "", 
                     DateStart = new DateTime(2014, 11, 28),
                     DateEnd = new DateTime(2014, 11, 30),

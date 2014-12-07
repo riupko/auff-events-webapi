@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using Microsoft.WindowsAzure.Mobile.Service.Config;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -8,9 +9,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("AuffEventsMobileService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("AuffEventsMobileService")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+[assembly: AssemblyCompany("AUFF")]
+[assembly: AssemblyProduct("AUFF Events")]
+[assembly: AssemblyCopyright("Copyright © AUFF 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,3 +34,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+//[assembly: ExtensionConfigProvider(typeof(EntityExtensionConfig))]

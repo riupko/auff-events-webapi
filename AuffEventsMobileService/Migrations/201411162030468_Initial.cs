@@ -31,7 +31,7 @@ namespace AuffEventsMobileService.Migrations
                                     new AnnotationValues(oldValue: null, newValue: "Version")
                                 },
                             }),
-                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7,
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7, defaultValue: DateTimeOffset.UtcNow,
                             annotations: new Dictionary<string, AnnotationValues>
                             {
                                 { 
@@ -56,7 +56,7 @@ namespace AuffEventsMobileService.Migrations
                                 },
                             }),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.Id, clustered: false)
                 .ForeignKey("dbo.EntryForms", t => t.EntryFormId)
                 .ForeignKey("dbo.TeamMembers", t => t.TeamMemberId)
                 .Index(t => t.EntryFormId)
@@ -86,7 +86,7 @@ namespace AuffEventsMobileService.Migrations
                                     new AnnotationValues(oldValue: null, newValue: "Version")
                                 },
                             }),
-                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7,
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7, defaultValue: DateTimeOffset.UtcNow, 
                             annotations: new Dictionary<string, AnnotationValues>
                             {
                                 { 
@@ -111,7 +111,7 @@ namespace AuffEventsMobileService.Migrations
                                 },
                             }),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.Id, clustered: false)
                 .ForeignKey("dbo.Events", t => t.EventId)
                 .ForeignKey("dbo.Teams", t => t.TeamId)
                 .Index(t => t.EventId)
@@ -146,7 +146,7 @@ namespace AuffEventsMobileService.Migrations
                                     new AnnotationValues(oldValue: null, newValue: "Version")
                                 },
                             }),
-                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7,
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7, defaultValue: DateTimeOffset.UtcNow,
                             annotations: new Dictionary<string, AnnotationValues>
                             {
                                 { 
@@ -171,7 +171,7 @@ namespace AuffEventsMobileService.Migrations
                                 },
                             }),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.Id, clustered: false)
                 .ForeignKey("dbo.Images", t => t.ImageId)
                 .ForeignKey("dbo.Locations", t => t.LocationId)
                 .Index(t => t.LocationId)
@@ -199,7 +199,7 @@ namespace AuffEventsMobileService.Migrations
                                     new AnnotationValues(oldValue: null, newValue: "Version")
                                 },
                             }),
-                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7,
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7, defaultValue: DateTimeOffset.UtcNow,
                             annotations: new Dictionary<string, AnnotationValues>
                             {
                                 { 
@@ -250,7 +250,7 @@ namespace AuffEventsMobileService.Migrations
                                     new AnnotationValues(oldValue: null, newValue: "Version")
                                 },
                             }),
-                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7,
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7, defaultValue: DateTimeOffset.UtcNow,
                             annotations: new Dictionary<string, AnnotationValues>
                             {
                                 { 
@@ -275,7 +275,7 @@ namespace AuffEventsMobileService.Migrations
                                 },
                             }),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.Id, clustered: false)
                 .Index(t => t.CreatedAt, clustered: true);
             
             CreateTable(
@@ -303,7 +303,7 @@ namespace AuffEventsMobileService.Migrations
                                     new AnnotationValues(oldValue: null, newValue: "Version")
                                 },
                             }),
-                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7,
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7, defaultValue: DateTimeOffset.UtcNow,
                             annotations: new Dictionary<string, AnnotationValues>
                             {
                                 { 
@@ -328,7 +328,7 @@ namespace AuffEventsMobileService.Migrations
                                 },
                             }),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.Id, clustered: false)
                 .ForeignKey("dbo.Images", t => t.ImageId)
                 .ForeignKey("dbo.Locations", t => t.LocationId)
                 .Index(t => t.LocationId)
@@ -363,7 +363,7 @@ namespace AuffEventsMobileService.Migrations
                                     new AnnotationValues(oldValue: null, newValue: "Version")
                                 },
                             }),
-                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7,
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7, defaultValue: DateTimeOffset.UtcNow,
                             annotations: new Dictionary<string, AnnotationValues>
                             {
                                 { 
@@ -388,7 +388,7 @@ namespace AuffEventsMobileService.Migrations
                                 },
                             }),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.Id, clustered: false)
                 .ForeignKey("dbo.Images", t => t.ImageId)
                 .ForeignKey("dbo.Teams", t => t.TeamId, cascadeDelete: true)
                 .Index(t => t.ImageId)
@@ -417,7 +417,7 @@ namespace AuffEventsMobileService.Migrations
                                     new AnnotationValues(oldValue: null, newValue: "Version")
                                 },
                             }),
-                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7,
+                        CreatedAt = c.DateTimeOffset(nullable: false, precision: 7, defaultValue: DateTimeOffset.UtcNow,
                             annotations: new Dictionary<string, AnnotationValues>
                             {
                                 { 
@@ -442,7 +442,7 @@ namespace AuffEventsMobileService.Migrations
                                 },
                             }),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.Id, clustered: false)
                 .Index(t => t.CreatedAt, clustered: true);
             
         }
