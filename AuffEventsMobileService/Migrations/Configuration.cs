@@ -124,25 +124,6 @@
                  new Team { Id = "2", Name = "Скала", Description = "Скала бла бла бла", DateBirth= new DateTime(2004, 1, 1) }
             };
 
-            List<TeamMember> teamMembers = new List<TeamMember>
-            {
-                  new TeamMember {
-                                                Id = "1",
-                                                Number = 2,
-                                                TeamId = "1",
-                                                TeamRoleId = "3",
-                                                MemberId = "1"
-                                            },
-                                             new TeamMember {
-                                                Id = "2",
-                                                Number = 2,
-                                                TeamId = "1",
-                                                TeamRoleId = "4",
-                                                MemberId = "2"
-                                            }
-
-            };
-
             List<Event> events = new List<Event>
             {
                 new Event 
@@ -166,11 +147,6 @@
             foreach (Team @team in teams)
             {
                 context.Set<Team>().Add(@team);
-            }
-
-            foreach (TeamMember @teamMember in teamMembers)
-            {
-                context.Set<TeamMember>().Add(@teamMember);
             }
 
             foreach (Event @event in events)

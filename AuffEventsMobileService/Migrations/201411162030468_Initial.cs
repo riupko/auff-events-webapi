@@ -224,7 +224,7 @@ namespace AuffEventsMobileService.Migrations
                                 },
                             }),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.Id, clustered: false)
                 .Index(t => t.CreatedAt, clustered: true);
             
             CreateTable(
