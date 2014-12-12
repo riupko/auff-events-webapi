@@ -28,12 +28,12 @@ namespace AuffEventsMobileService.DataObjects
         public DateTime DateEnd { get; set; }
         [Required]
         public DateTime DateEntryStop { get; set; }
-        public string LocationId { get; set; }
-        public Location Location { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+        public string Address { get; set; }
         //[ForeignKey("EventID")]
         //public string ParentEventId { get; set; }
-        public string ImageId { get; set; }
-        public Image Image { get; set; }
+        public string ImageUrl { get; set; }
         public bool IsPublished { get; set; }
         [JsonIgnore]
         public virtual ICollection<EntryForm> EntryForms { get; set; }

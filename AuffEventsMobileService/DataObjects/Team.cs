@@ -20,11 +20,11 @@ namespace AuffEventsMobileService.DataObjects
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime DateBirth { get; set; }
-        public string LocationId { get; set; }
-        public Location Location { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+        public string Address { get; set; }
         //public string ManagerId { get; set; }
-        public string ImageId { get; set; }
-        public Image Image { get; set; }
+        public string ImageUrl { get; set; }
         [JsonIgnore]
         public virtual ICollection<EntryForm> EntryForms { get; set; }
         [JsonIgnore]
