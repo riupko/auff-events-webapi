@@ -6,11 +6,17 @@ using System.Web.Http.OData;
 using Microsoft.WindowsAzure.Mobile.Service;
 using AuffEventsMobileService.DataObjects;
 using AuffEventsMobileService.Models;
+using System.Net.Http;
 
 namespace AuffEventsMobileService.Controllers
 {
-    public class TeamController : TableController<Team>
+    public class TeamController : ImageTableController<Team>
     {
+        public TeamController()
+        {
+            ImageFolder = "team";
+        }
+
         protected override void Initialize(HttpControllerContext controllerContext)
         {
             base.Initialize(controllerContext);
@@ -21,7 +27,7 @@ namespace AuffEventsMobileService.Controllers
         // GET tables/Team
         public IQueryable<Team> GetAllTeam()
         {
-            return Query(); 
+            return Query();
         }
 
         // GET tables/Team/48D68C86-6EA6-4C25-AA33-223FC9A27959
@@ -49,5 +55,26 @@ namespace AuffEventsMobileService.Controllers
              return DeleteAsync(id);
         }
 
+        #region Image Methods
+        [Route("images/Team/{id}")]
+        public override async Task<HttpResponseMessage> GetImage(string id)
+        {
+            return await base.GetImage(id);
+        }
+
+        [HttpPost]
+        [Route("images/Team/{id}")]
+        public override async Task<HttpResponseMessage> PostImage(string id)
+        {
+            return await base.PostImage(id);
+        }
+
+        [HttpDelete]
+        [Route("images/Team/{id}")]
+        public override Task DeleteImage(string id)
+        {
+            return base.DeleteImage(id);
+        }
+        #endregion
     }
 }

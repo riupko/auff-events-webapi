@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace AuffEventsMobileService.DataObjects
 {
-    public class Team :EntityData
+    public class Team : EntityData
     {
         public Team()
         {
@@ -24,7 +24,6 @@ namespace AuffEventsMobileService.DataObjects
         public string City { get; set; }
         public string Address { get; set; }
         //public string ManagerId { get; set; }
-        public string ImageUrl { get; set; }
         [JsonIgnore]
         public virtual ICollection<EntryForm> EntryForms { get; set; }
         [JsonIgnore]

@@ -33,7 +33,6 @@ namespace AuffEventsMobileService.DataObjects
         public string Address { get; set; }
         //[ForeignKey("EventID")]
         //public string ParentEventId { get; set; }
-        public string ImageUrl { get; set; }
         public bool IsPublished { get; set; }
         [JsonIgnore]
         public virtual ICollection<EntryForm> EntryForms { get; set; }

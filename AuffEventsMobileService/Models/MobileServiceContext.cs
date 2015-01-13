@@ -44,6 +44,8 @@ namespace AuffEventsMobileService.Models
             modelBuilder.Conventions.Add(
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.TeamMember> TeamMembers { get; set; }

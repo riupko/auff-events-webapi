@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace AuffEventsMobileService.DataObjects
 {
-    public class Member :EntityData
+    public class Member : EntityData
     {
         public Member()
         {
@@ -27,8 +27,6 @@ namespace AuffEventsMobileService.DataObjects
         public int Grip { get; set; }
         [Required]
         public DateTime DateBirth { get; set; }
-        public string ImageUrl { get; set; }
-
         [MaxLength(128)]
         public string OriginalTeam { get; set; }
         [JsonIgnore]

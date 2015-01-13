@@ -29,7 +29,7 @@
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
+            return;
             if (context.Members.Count() == 0)
             {
                 List<DtoMember> members = new List<DtoMember>
