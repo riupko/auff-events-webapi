@@ -18,10 +18,10 @@ namespace AuffEventsMobileService.Controllers
     {
         protected string ImageFolder { get; set; }
 
+        [AllowAnonymous]
         [HttpGet]
         public virtual async Task<HttpResponseMessage> GetImage(string id)
         {
-            var result = new HttpResponseMessage(HttpStatusCode.OK);
             HttpResponseMessage message = new HttpResponseMessage(HttpStatusCode.OK);
             try
             {
@@ -54,7 +54,7 @@ namespace AuffEventsMobileService.Controllers
                 Services.Log.Error("Can not be saved to blob storage: " + ImageFolder + "/" + id, ex);
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }
-            return await GetImage(id);
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         [HttpDelete]
