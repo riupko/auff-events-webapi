@@ -52,6 +52,9 @@ namespace AuffEventsMobileService.Models
         public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.EntryFormMember> EntryFormMembers { get; set; }
         public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.Member> Members { get; set; }
         public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.TeamRole> TeamRoles { get; set; }
+        public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.Club> Clubs { get; set; }
+        public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.MemberTransfer> MemberTransfers { get; set; }
+        public System.Data.Entity.DbSet<AuffEventsMobileService.DataObjects.MemberLicense> MemberLicenses { get; set; }
     }
 
 }

@@ -191,23 +191,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ClubController.cs" />
     <Compile Include="Controllers\EntryFormController.cs" />
     <Compile Include="Controllers\EntryFormMemberController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\ImageTableController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MemberLicenseController.cs" />
+    <Compile Include="Controllers\MemberTransferController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\TeamMemberController.cs" />
     <Compile Include="Controllers\TeamRoleController.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="DataObjects\MemberLicense.cs" />
+    <Compile Include="DataObjects\Team.cs" />
+    <Compile Include="DataObjects\MemberTransfer.cs" />
     <Compile Include="DataObjects\TeamRole.cs" />
     <Compile Include="DataObjects\EntryFormMember.cs" />
     <Compile Include="DataObjects\EntryForm.cs" />
     <Compile Include="DataObjects\Event.cs" />
     <Compile Include="DataObjects\Member.cs" />
     <Compile Include="DataObjects\TeamMember.cs" />
-    <Compile Include="DataObjects\Team.cs" />
+    <Compile Include="DataObjects\Club.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Migrations\201411162030468_Initial.cs" />
     <Compile Include="Migrations\201411162030468_Initial.Designer.cs">
@@ -232,6 +238,10 @@
     <Compile Include="Migrations\201412201215250_RemoveImageUrl.cs" />
     <Compile Include="Migrations\201412201215250_RemoveImageUrl.Designer.cs">
       <DependentUpon>201412201215250_RemoveImageUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502152046135_AddClub.cs" />
+    <Compile Include="Migrations\201502152046135_AddClub.Designer.cs">
+      <DependentUpon>201502152046135_AddClub.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
@@ -285,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412201215250_RemoveImageUrl.resx">
       <DependentUpon>201412201215250_RemoveImageUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502152046135_AddClub.resx">
+      <DependentUpon>201502152046135_AddClub.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -8,12 +8,11 @@ using Newtonsoft.Json;
 
 namespace AuffEventsMobileService.DataObjects
 {
-    public class Team : EntityData
+    public class Club : EntityData
     {
-        public Team()
+        public Club()
         {
-            EntryForms = new List<EntryForm>();
-            TeamMembers = new List<TeamMember>();
+            Teams = new List<Team>();
         }
         [Required]
         [MaxLength(128)]
@@ -23,11 +22,8 @@ namespace AuffEventsMobileService.DataObjects
         public string Country { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
-        public string ClubId { get; set; }
-        public virtual Club Club { get; set; }
+        //public string ManagerId { get; set; }
         [JsonIgnore]
-        public virtual ICollection<EntryForm> EntryForms { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<TeamMember> TeamMembers { get; set; }
+        public virtual ICollection<Team> Teams { get; set; }
     }
 }

@@ -29,6 +29,9 @@ namespace AuffEventsMobileService.DataObjects
         public DateTime DateBirth { get; set; }
         [MaxLength(128)]
         public string OriginalTeam { get; set; }
+        public string ClubId { get; set; }
+        public virtual Club Club { get; set; }
+        
         [JsonIgnore]
         public virtual ICollection<TeamMember> TeamMembers { get; set; }
     }
